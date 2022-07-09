@@ -1,0 +1,24 @@
+- provide(:title, 'Статусы')
+
+h1.display-6.fw-bold.my-4 Статусы
+
+table.table.table-hover.mt-2
+  thead
+    tr
+      th{ scope: :col } #
+      th{ scope: :col } Наименование
+      th{ scope: :col } Дата создания
+      th{ scope: :col } Действия
+  tbody
+    - @statuses.each_with_index do |status, idx|
+      tr
+        td = idx + 1
+        td = status.name
+        td = l(status.created_at, format: :long)
+        td
+          - if signed_in?
+            = link_to 'Изменить', edit_status_path(status), class: 'btn btn-primary me-2'
+            = link_to 'Удалить', status_path(status),
+                    class: 'btn btn-danger',
+                    data: { 'turbo-method': :delete,
+                            turbo_confirm: 'Are you sure?' }

@@ -7,13 +7,13 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light.bg-gradient.mb-3
           = link_to 'Пользователи', users_path,
                   class: class_names('nav-link', { active: current_page?(users_path) })
         li.nav-item
-          = link_to 'Задачи', root_path,
+          = link_to 'Статусы', statuses_path,
                   class: class_names('nav-link', { active: current_page?(users_path) })
         li.nav-item
           = link_to 'Метки', root_path,
                   class: class_names('nav-link', { active: current_page?(users_path) })
         li.nav-item
-          = link_to 'Лейблы', root_path,
+          = link_to 'Задачи', root_path,
                   class: class_names('nav-link', { active: current_page?(users_path) })
       .text-end
         - if signed_in?

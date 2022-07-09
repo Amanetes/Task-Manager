@@ -13,10 +13,14 @@ table.table.table-hover.mt-2
   tbody
     - @users.each_with_index do |user, idx|
       tr
-        th{scope: :col } = idx + 1
+        th{ scope: :col } = idx + 1
         td = user.full_name
         td = user.email
         td = l(user.created_at, format: :long)
         td
-          = link_to 'Изменить', edit_user_path(user), class: 'btn btn-primary me-2'
-          = link_to 'Удалить', user_path(user), method: :delete, class: 'btn btn-danger'
+          - if policy(user).edit? && policy(user).destroy?
+            = link_to 'Изменить', edit_user_path(user), class: 'btn btn-primary me-2'
+            = link_to 'Удалить', user_path(user),
+                    class: 'btn btn-danger',
+                    data: { 'turbo-method': :delete,
+                            turbo_confirm: 'Are you sure?' }

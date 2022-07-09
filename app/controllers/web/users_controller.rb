@@ -3,6 +3,8 @@
 module Web
   class UsersController < Web::ApplicationController
     before_action :set_user, only: %i[edit update destroy]
+    before_action :authorize_user!
+    after_action :verify_authorized
 
     def index
       @users = User.order(created_at: :desc)
@@ -25,10 +27,34 @@ module Web
 
     def edit; end
 
+    def update
+      if @user.update(user_params)
+        flash[:success] = 'Пользователь обновлен'
+        redirect_to root_url
+      else
+        flash.now[:error] = 'Не удалось удалить пользователя'
+        render :edit, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      if @user.destroy
+        flash[:success] = 'Пользователь удален'
+        redirect_to root_url
+      else
+        flash.now[error] = 'Не удалось удалить пользователя'
+        redirect_to users_url, status: :see_other
+      end
+    end
+
     private
 
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def authorize_user!
+      authorize(@user || User)
     end
 
     def user_params
