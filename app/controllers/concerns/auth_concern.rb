@@ -27,7 +27,7 @@ module AuthConcern
       return if signed_in?
 
       flash[:warn] = 'Необходима аутентификация!'
-      redirect_to user, status: :see_other
+      redirect_to root_url, status: :see_other
     end
 
     helper_method :current_user, :signed_in?
