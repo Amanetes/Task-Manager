@@ -1,0 +1,10 @@
+en:
+  web:
+    welcome:
+      index:
+        name: Менеджер задач
+        description: >
+          Task Manager – is a task management system.
+          It allows you to set tasks, assign performers and change their statuses. 
+          Registration and authentication are required to work with the system.
+        more: More

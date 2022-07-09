@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      user:
+        one: User
+        few: Users
+        many: Users
+        other: Users
+    attributes:
+      user:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        password: Password
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: can't be blank
+            last_name:
+              blank: can't be blank
+            email:
+              invalid: has invalid format

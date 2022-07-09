@@ -1,0 +1,24 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        few: Пользователей
+        many: Пользователи
+        other: Пользователи
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        email: Почта
+        password: Пароль
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: не может быть пустым
+            last_name:
+              blank: не может быть пустым
+            email:
+              invalid: имеет неверный формат

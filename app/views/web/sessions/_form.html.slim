@@ -1,0 +1,16 @@
+.row.justify-content-center
+  .col-12.col-md-8
+    .card.shadow-sm.bg-light.bg-gradient.rounded-3
+      .card-body
+        .form-signin
+          = simple_form_for(:session, url: session_path) do |f|
+
+            .form-label
+              = f.input :email
+
+              = f.input :password
+
+            .form-actions
+              = f.button :submit, class: 'btn-primary'
+
+

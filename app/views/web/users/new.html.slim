@@ -1,0 +1,8 @@
+.row.justify-content-sm-center
+  .col-12.col-md-8
+    .card.shadow-sm.bg-light.bg-gradient.rounded-3
+      .card-body
+        .form-signin.text-center
+          i.bi.bi-person-square(style='font-size: 3rem; color: DodgerBlue;')
+          h3.mb-3.fw-bold Регистрация
+          == render 'form', user: @user

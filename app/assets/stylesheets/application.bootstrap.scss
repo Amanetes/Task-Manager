@@ -1,0 +1,45 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$custom-colors: (
+        "bootstrap": #563d7c,
+        "simpleform": #00617f
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Components
+@import "components/alert";
+@import "components/icon";
+
+// simple_form helpers
+@import "simple_form-bootstrap/simple_form-bootstrap";
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}

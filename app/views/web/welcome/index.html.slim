@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-12
+      .card.shadow.bg-light.bg-gradient.rounded-3
+        .card-body.p-5
+          .display-4.fw-bold.mb-0 = t('.name')
+          p.lead = t('.description')
+          hr
+            = link_to t('.more'), root_path,
+                    class: 'bi-lightbulb btn btn-primary btn-lg px-4 fw-bold'

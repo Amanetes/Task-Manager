@@ -1,0 +1,14 @@
+= simple_form_for(user, wrapper: :floating_labels_form) do |f|
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  = f.input :first_name, label: 'Имя', placeholder: 'Имя'
+  = f.input :last_name, label: 'Фамилия', placeholder: 'Фамилия'
+
+  = f.input :email, label: "Email", placeholder: 'Email'
+
+  = f.input :password, label: 'Password', placeholder: 'Password'
+  = f.input :password_confirmation, label: 'Password Confirmation', placeholder: 'Password Confirmation'
+
+  .form-actions
+    = f.button :submit, class: 'w-100 btn btn-lg btn-primary'
+
