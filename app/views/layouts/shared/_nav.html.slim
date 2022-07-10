@@ -1,25 +1,28 @@
 nav.navbar.navbar-expand-md.navbar-light.bg-light.bg-gradient.mb-3
   .container-fluid
     = link_to 'Менеджер задач', root_path, class: 'navbar-brand'
-    .d-flex.flex-column.flex-md-row.flex-fill.align-items-stretch.align-items-md-center.justify-content-md-between
-      ul.navbar-nav
-        li.nav-item
+    .d-flex.flex-fill
+      ul.navbar-nav.justify-content-end.w-100
+        li.nav-item.me-auto
           = link_to 'Пользователи', users_path,
                   class: class_names('nav-link', { active: current_page?(users_path) })
-        li.nav-item
-          = link_to 'Статусы', statuses_path,
-                  class: class_names('nav-link', { active: current_page?(users_path) })
-        li.nav-item
-          = link_to 'Метки', root_path,
-                  class: class_names('nav-link', { active: current_page?(users_path) })
-        li.nav-item
-          = link_to 'Задачи', root_path,
-                  class: class_names('nav-link', { active: current_page?(users_path) })
-      .text-end
+      ul.navbar-nav.me-2
         - if signed_in?
-          = link_to 'Выход', session_path,
-                  class: 'btn btn-outline-primary',
-                  data: { 'turbo-method': :delete }
+          li.nav-item.mx-lg-1
+            = link_to 'Статусы', statuses_path,
+                    class: class_names('nav-link', { active: current_page?(statuses_path) })
+          li.nav-item.mx-lg-1
+            = link_to 'Метки', root_path,
+                    class: class_names('nav-link', { active: current_page?(users_path) })
+          li.nav-item.mx-lg-1
+            = link_to 'Задачи', root_path,
+                    class: class_names('nav-link', { active: current_page?(users_path) })
+          li.nav-item.mx-lg-1
+            = link_to 'Выход', session_path,
+                    class: 'btn btn-outline-primary',
+                    data: { 'turbo-method': :delete }
         - else
-          = link_to 'Вход', new_session_path, class: 'btn btn-outline-dark me-2'
-          = link_to 'Регистрация', new_user_path, class: 'btn btn-outline-primary'
+          li.nav-item
+            = link_to 'Вход', new_session_path, class: 'btn btn-outline-dark me-2'
+          li.nav-item
+            = link_to 'Регистрация', new_user_path, class: 'btn btn-outline-primary'

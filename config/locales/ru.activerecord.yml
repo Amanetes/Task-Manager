@@ -2,10 +2,10 @@ ru:
   activerecord:
     models:
       user:
-        one: Пользователь
+        one: Пользователя
         few: Пользователей
         many: Пользователи
-        other: Пользователи
+        other: Пользователь
     attributes:
       user:
         first_name: Имя

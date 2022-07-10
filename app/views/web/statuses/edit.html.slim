@@ -1,0 +1,6 @@
+= provide(:title, 'Редактировать статус')
+
+.row.justify-content-sm-start
+  .form-control.p-4.shadow-sm.bg-light.bg-gradient.rounded-3.w-50
+    h1.h3.my-3.fw-bold Изменение статуса
+    == render 'form', status: @status, url: status_path

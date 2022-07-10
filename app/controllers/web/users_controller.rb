@@ -7,7 +7,7 @@ module Web
     after_action :verify_authorized
 
     def index
-      @users = User.order(created_at: :desc)
+      @users = User.order(:id)
     end
 
     def new
@@ -40,7 +40,7 @@ module Web
     def destroy
       if @user.destroy
         flash[:success] = 'Пользователь удален'
-        redirect_to root_url
+        redirect_to root_url, status: :see_other
       else
         flash.now[error] = 'Не удалось удалить пользователя'
         redirect_to users_url, status: :see_other

@@ -1,6 +1,7 @@
 - provide(:title, 'Статусы')
 
-h1.display-6.fw-bold.my-4 Статусы
+h1.display-6.fw-bold.my-4 = t('.name')
+= link_to 'Создать статус', new_status_path, class: 'btn btn-primary'
 
 table.table.table-hover.mt-2
   thead

@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
     resources :users, except: %i[show]
     resource :session, only: %i[new create destroy]
-    resources :task_statuses, as: :statuses, except: %i[show]
+    resources :statuses, except: %i[show]
   end
 end

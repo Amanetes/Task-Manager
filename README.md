@@ -1,24 +1,20 @@
-# README
+## Task Manager 🛠
+Task Manager is a task management system. It allows you to set tasks, assign users and change their statuses. Registration and authentication are required to work with the system.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 3.1.2
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+* Clone this repository with the following action
 
-* System dependencies
+```git
+git clone git@github.com:Amanetes/Task-Manager.git
+```
 
-* Configuration
+* Run `make setup`
+* Run `make start` to fire up server
+* Enjoy
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Please follow the link below to access the app
+[Task Manager]("You Like Huey Lewis And The News?")

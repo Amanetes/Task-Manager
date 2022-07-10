@@ -11,9 +11,9 @@ table.table.table-hover.mt-2
       th{ scope: :col } Дата создания
       th{ scope: :col } Действия
   tbody
-    - @users.each_with_index do |user, idx|
+    - @users.each_with_index do |user|
       tr
-        th{ scope: :col } = idx + 1
+        th{ scope: :col } = user.id
         td = user.full_name
         td = user.email
         td = l(user.created_at, format: :long)

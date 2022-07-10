@@ -1,0 +1,7 @@
+= simple_form_for(status, url: url, wrapper: :floating_labels_form) do |f|
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  = f.input :name, label: 'Название', placeholder: 'Название'
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-primary'
