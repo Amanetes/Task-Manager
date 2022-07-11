@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :users, except: %i[show]
     resource :session, only: %i[new create destroy]
     resources :statuses, except: %i[show]
+    resources :tasks
   end
 end

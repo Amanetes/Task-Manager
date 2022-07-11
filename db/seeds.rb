@@ -8,29 +8,38 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create!(
-  first_name: 'Joey',
-  last_name: 'Logano',
-  email: 'foo@bar.com',
-  password: 'foobar',
-  password_confirmation: 'foobar'
+# User.create!(
+#   first_name: 'Joey',
+#   last_name: 'Logano',
+#   email: 'foo@bar.com',
+#   password: 'foobar',
+#   password_confirmation: 'foobar'
+# )
+#
+# 7.times do
+#   password = 'foobar'
+#   User.create!(
+#     first_name: Faker::Name.unique.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.safe_email,
+#     password:,
+#     password_confirmation: password
+#   )
+# end
+#
+# statuses = ['Новый', 'В работе', 'Выполнено']
+#
+# statuses.each do |status|
+#   TaskStatus.create!(
+#     name: status
+#   )
+# end
+
+Task.create!(
+  name: Faker::Science.modifier,
+  description: Faker::TvShows::BigBangTheory.quote,
+  creator_id: 1,
+  executor_id: 2,
+  task_status_id: 1
 )
 
-7.times do
-  password = 'foobar'
-  User.create!(
-    first_name: Faker::Name.unique.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.safe_email,
-    password:,
-    password_confirmation: password
-  )
-end
-
-statuses = ['Новый', 'В работе', 'Выполнено']
-
-statuses.each do |status|
-  TaskStatus.create!(
-    name: status
-  )
-end

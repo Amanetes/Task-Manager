@@ -15,8 +15,8 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light.bg-gradient.mb-3
             = link_to 'Метки', root_path,
                     class: class_names('nav-link', { active: current_page?(users_path) })
           li.nav-item.mx-lg-1
-            = link_to 'Задачи', root_path,
-                    class: class_names('nav-link', { active: current_page?(users_path) })
+            = link_to 'Задачи', tasks_path,
+                    class: class_names('nav-link', { active: current_page?(tasks_path) })
           li.nav-item.mx-lg-1
             = link_to 'Выход', session_path,
                     class: 'btn btn-outline-primary',

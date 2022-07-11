@@ -1,0 +1,5 @@
+en:
+  web:
+    tasks:
+      index:
+        name: Tasks
